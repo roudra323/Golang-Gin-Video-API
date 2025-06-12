@@ -41,8 +41,6 @@ func (s *videoService) GetByID(id uint64) (domain.Video, error) {
 
 // Update contains the business logic for updating a video.
 func (s *videoService) Update(video domain.Video) (domain.Video, error) {
-	// You might add logic here to check if the user performing the update
-	// is the original author of the video.
 	return s.repo.Update(video)
 }
 

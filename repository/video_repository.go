@@ -17,6 +17,10 @@ type videoRepository struct {
 	db *gorm.DB
 }
 
+func NewVideoRepository(db *gorm.DB) VideoRepository {
+	return &videoRepository{db: db}
+}
+
 func (r *videoRepository) Save(video domain.Video) (domain.Video, error) {
 	err := r.db.Create(&video).Error
 	return video, err
